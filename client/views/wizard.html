@@ -1,0 +1,66 @@
+<template name="au_wizzard_layout">
+    {{> yield}}
+</template>
+
+<template name="au_wizzard">
+    <div class="wizard" id="au-config-wizzard" data-title="Configuration">
+
+        <div class="wizard-card" data-cardname="users">
+            <h3>Admin user password </h3>
+
+            <div class="wizard-input-section">
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label for="password">Set admin password:</label><input type="password" class="form-control" id="password" name="password" placeholder="Set admin user password">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wizard-card" data-cardname="social">
+            <h3>Social services </h3>
+            <p>Configure your application so that users could login with their social app accounts. You can leave fields empty for services you do not want to configure. This can be configured later in admin dashboard as well.</p>
+            <div class="wizard-input-section">
+                {{#each loginServices}}
+                    {{> social_config}}
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="wizard-error">
+            <div class="alert alert-error">
+                <strong>There was a problem</strong> with your submission.
+                Please correct the errors and re-submit.
+                <a class="btn btn-danger start-over">Try again</a>
+            </div>
+        </div>
+
+        <div class="wizard-failure">
+            <div class="alert alert-error">
+                <strong>There was a problem</strong> submitting the form.
+                Please try again in a minute.
+                <a class="btn btn-danger start-over">Try again</a>
+            </div>
+        </div>
+
+        <div class="wizard-success">
+            <div class="alert alert-success">
+                <span class="create-server-name"></span>Application configured <strong>Successfully.</strong>
+            </div>
+
+            <a class="btn btn-success im-done">Done</a>
+        </div>
+    </div>
+
+</template>
+
+<template name='social_config'>
+    <div class="form-group">
+        <div class="col-sm-6">
+            <label for="client-id-{{this}}">{{this}} client ID:</label><input type="text" class="form-control" id="client-id-{{this}}" name="client-id-{{this}}" placeholder="Client ID, get it from {{this}}">
+        </div>
+        <div class="col-sm-6">
+            <label for="secret-id-{{this}}">{{this}} secret ID:</label><input type="text" class="form-control" id="secret-id-{{this}}" name="secret-id-{{this}}" placeholder="Secret ID, get it from {{this}}">
+        </div>
+    </div>
+</template>
