@@ -2,16 +2,14 @@
 
 ## History
 
-###### 0.0.1 - In Development, unstable
+###### 0.0.2 - In Development, unstable
 
 ## About
 
 ## Installation
 
-This package can be installed with [Meteorite](https://github.com/oortcloud/meteorite/). From inside a Meteorite-managed app:
-
 ``` sh
-$ mrt add au-config
+$ meteor add au-config
 ```
 
 ## Documentation - WORK IN PROGRESS
