@@ -1,7 +1,7 @@
 Package.describe({
   summary: "AwareUnit configuration package, that provides UI to configure application",
   name: "steelzz:au-config",
-  version: "0.0.1",
+  version: "0.0.2",
   git: "https://github.com/SteelzZ/au-config.git",
   homepage: "https://github.com/SteelzZ/au-config"
 });
